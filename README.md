@@ -41,6 +41,11 @@ Il networking è fondamentale per il funzionamento delle moderne società inform
 
 Il Protocollo Internet, comunemente noto con la sigla IP (dall’inglese “Internet Protocol”), è uno dei principali protocolli di rete su cui si fonda Internet. Si occupa di indirizzare e instradare i pacchetti di dati tra host su reti interconnesse, permettendo così ai dispositivi di comunicare tra di loro indipendentemente dalla loro posizione fisica o dalla topologia di rete impiegata.
 
+X individuare ip: terminale -> ifconfig | grep "192"
+
+
+X traceroute -> serie di IP che segnano le varie macchine: il primo è il nostro router. se copio e incollo l'IP su internet, esce pagina di accesso al nostro router.
+
 ### Funzionamento Base del Protocollo IP:
 
 Indirizzamento IP:
