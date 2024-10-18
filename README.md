@@ -64,13 +64,26 @@ Esistono due versioni principali del Protocollo Internet in uso:
 IPv4 (IP version 4):
 Questa è la versione più diffusa di IP, ed è stata la spina dorsale di Internet fin dalla sua invenzione. Gli indirizzi IPv4 sono lunghi 32 bit, per un totale di circa 4,3 miliardi di indirizzi unici possibili. Tuttavia, a causa dell’enorme crescita di dispositivi collegati a Internet, gli indirizzi IPv4 stanno andando esauriti.
 
+In ogni caso: IP= 4 pacchetti di numeri che stanno nel range 0-255.
+
+TUTTO INTERNET: 0.0.0.0-255.255.255.255 -> 256^4 totale di macchine (circa 4,3 miliardi) -> iniziano a starci stretti perché siamo in più di 4 miliardi, stiamo per esaurire gli indirizzi IP.
+SI è cercato di arginare al problema raggruppando nello stesso IP pubblico tutti i dispositivi nella stessa LAN.
+
 IPv6 (IP version 6):
 IPv6 è stato introdotto per risolvere il problema dell’esaurimento degli indirizzi IPv4. Gli indirizzi IPv6 sono lunghi 128 bit, offrendo un numero quasi infinito di indirizzi IP disponibili (2^128, ossia circa 340 undecillioni di indirizzi). IPv6 offre anche miglioramenti in termini di efficienza del routing, sicurezza e facilità di configurazione dei dispositivi di rete.
+
+-> versione più contorna x' è formata da più blocchi.
+
+
+
+
 
 ### Importanza del Protocollo IP:
 
 Il Protocollo IP è essenziale per il funzionamento di Internet e delle reti moderne. Oltre a permettere la comunicazione tra dispositivi distantissimi, agevola l’autoconfigurazione e il dynamic host configuration, elementi basilari per la gestione e la scalabilità di grandi reti. Inoltre, la transizione verso IPv6 gioca un ruolo cruciale per sostenere lo sviluppo futuro dell’Internet of Things (IoT) e per supportare un numero sempre crescente di dispositivi connessi.
 
+### https://lite.ip2location.com/ip-address-ranges-by-country -> localizzazione geografica di una serie di IP
+Se voglio prendere di mira un paese, un hacker cerca le vulnerabilità dei computer con un IP compreso i quelli del paese.
 ______________________________________
 
 
@@ -129,6 +142,7 @@ To communicate over the internet, your IP address must be translated to a public
 
 > ifconfig
 
+X vedere mio IP pubblico, basta cercaresu internet "mio IP".
 
 # APPROFONDIMENTO IFCONFIG
 
