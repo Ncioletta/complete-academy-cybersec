@@ -6,13 +6,14 @@
 ![VonNeumann](https://github.com/user-attachments/assets/57720f3d-85e9-4036-b8a8-e27fb8fb999a)
 
 
+**MACROARGOMENTI DI INTERESSE CYBERSEC
+Sistemi operativi, programmazione (creazione tools), reti**
+
 # Apripre più terminali :
 
 CRTL + SHIFT + R  
 CRTL + SHIFT + E
 CRTL + SHIFT + D
-
-
 
 
 
@@ -23,17 +24,18 @@ Il networking, in termini informatici e tecnologici, si riferisce alla pratica d
 
 Il networking abbraccia una varietà di concetti tecnologici, tra cui:
 
-1. Reti LAN e WAN: Local Area Network (LAN) si riferisce a una rete in un’area limitata, come un ufficio o una casa, mentre Wide Area Network (WAN) copre aree geograficamente più ampie, potenzialmente su scala globale, come Internet.
+1. Reti LAN e WAN: Local Area Network (LAN) si riferisce a una rete in un’area limitata, come un ufficio o una casa (es: serie di dispositivi all'interno di un palazzo), mentre Wide Area Network (WAN) copre aree geograficamente più ampie, potenzialmente su scala globale, come Internet. Generalmente, il collegamento tra LAN e WAN può essere (in una LAN come la casa) il router.
+   Capire il mio indirizzo IP sulla rete locale: terminale -> **ifconfig** | grep "192" , grep è una sorta di filtro. IP è un modo x contraddistinguere un computer all'interno di una rete.
 
-2. Protocolli di rete: I protocolli di rete sono insiemi di regole che governano la comunicazione tra dispositivi in rete. Esempi comuni sono l’Internet Protocol (IP), il Transmission Control Protocol (TCP), e il Hypertext Transfer Protocol (HTTP).
+3. Protocolli di rete: I protocolli di rete sono insiemi di regole che governano la comunicazione tra dispositivi in rete. Esempi comuni sono l’Internet Protocol (IP -> unico x ogni computer; conoscendo un indirizzo IP posso mettermi in comunicazione con quel dispositivo), il Transmission Control Protocol (TCP), e il Hypertext Transfer Protocol (HTTP).
 
-3. Hardware di rete: Includono dispositivi come router, switch, hub, modems, access points, e le infrastrutture di trasmissione che permettono il passaggio del traffico di rete tra dispositivi.
+4. Hardware di rete: Includono dispositivi come router, switch, hub, modems, access points, e le infrastrutture di trasmissione che permettono il passaggio del traffico di rete tra dispositivi.
 
-4. Topologia di rete: Si riferisce alla disposizione fisica o logica di una rete, inclusi i percorsi utilizzati per scambiare dati tra nodi di rete, come una topologia a stella, ad anello, a maglia o ad albero.
+5. Topologia di rete: Si riferisce alla disposizione fisica o logica di una rete, inclusi i percorsi utilizzati per scambiare dati tra nodi di rete, come una topologia a stella, ad anello, a maglia o ad albero.
 
-5. Architetture di rete: Il modo in cui i componenti di una rete sono organizzati e interagiscono, come client-server o peer-to-peer (P2P).
+6. Architetture di rete: Il modo in cui i componenti di una rete sono organizzati e interagiscono, come client-server o peer-to-peer (P2P).
 
-6. Cybersecurity: Il networking comporta anche la sicurezza della rete, che consiste nel proteggere le risorse di rete e i dati trasferiti da minacce come attacchi informatici, malware e intrusioni.
+7. Cybersecurity: Il networking comporta anche la sicurezza della rete, che consiste nel proteggere le risorse di rete e i dati trasferiti da minacce come attacchi informatici, malware e intrusioni.
 
 Il networking è fondamentale per il funzionamento delle moderne società informatiche, facilitando applicazioni come email, condivisione di file, accesso a risorse remote, streaming di media, comunicazioni VoIP e la connettività Internet in generale. Inoltre, con l’avvento di tecnologie come l’Internet of Things (IoT), il networking ha esteso la sua portata connettendo anche dispositivi non tradizionali, come elettrodomestici, veicoli e sensori, contribuendo a costruire ambienti intelligenti e interconnessi.
 
