@@ -902,7 +902,7 @@ Nel contesto delle reti IPv6, non esiste un vero e proprio indirizzo di broadcas
 
 L'indirizzo di loopback è un indirizzo speciale utilizzato per testare la connettività di una scheda di rete o per accedere ai servizi locali su un computer senza dover attraversare una rete fisica. Questo indirizzo consente di inviare pacchetti a se stessi, senza che essi lascino effettivamente la scheda di rete.
 
-In IPv4, l'indirizzo di loopback è 127.0.0.1. Può essere usato per accedere a servizi locali, come server web o database, senza doverli instradare attraverso una rete fisica. Ad esempio, digitando "http://127.0.0.1" nella barra degli indirizzi del browser, si accede al server web in esecuzione sulla stessa macchina.
+In IPv4, l'indirizzo di loopback è 127.0.0.1. Può essere usato per accedere a servizi locali, come server web o database, senza doverli instradare attraverso una rete fisica. Ad esempio, digitando "http://127.0.0.1" nella barra degli indirizzi del browser, si accede al server web in esecuzione sulla stessa macchina. -> ogni macchina individua questo IP per riferirsi a se stessa.
 
 In IPv6, l'equivalente dell'indirizzo di loopback è "::1".
 
