@@ -140,6 +140,15 @@ This is your private IP that is only usable on the local area network.
 To communicate over the internet, your IP address must be translated to a public IP by a NAT device
 
 
+IP PUBBLICO: il provider assegna al dispositivo un IP
+- **STATICO**: non muta nel tempo; è un servizio da richiedere. L'utilità è che facilita la configurazione di servizi che espongono.
+Es: ho creato un sito web che ho configurato in un server (come un computer con tanta RAM e tanta CPU); questo server ha un IP statico e a quel punto chunque conosca l'IP può collegarsi al mio sito web. 
+- **DINAMICO**: può mutare nel tempo; nel 99,9% dei casi, a meno che non sia fatta richiesta, l'IP è dinamico. Generalmente, quando spengo il provider, una volta acceso forza la modifica dell'IP.
+La diffferenza è che con lo statico faccio meno fatica a configurare dei servizi.
+
+In una LAN più macchine possono comunicare tra di loro? Yes, via cavo o wirelesss tramite rete comune senza uscire dall'esterno della LAN.
+
+
 > ifconfig
 
 X vedere mio IP pubblico, basta cercaresu internet "mio IP".
@@ -343,7 +352,7 @@ Quando un dispositivo (client) si connette a una rete, segue un processo DHCP a 
 
 3. Request: Il client riceve una o più offerte e sceglie una. Poi invia un messaggio broadcast DHCP Request per informare tutti i server DHCP sulla scelta dell’offerta accettata e per richiedere l’indirizzo IP proposto.
 
-4. Acknowledge: Il server DHCP selezionato risponde con un messaggio DHCP Acknowledge, confermando l’assegnazione dell’indirizzo IP e di altri parametri di configurazione al client. Se invece avviene un problema, il server invierà un messaggio DHCP Nak (negative acknowledgment), e il client dovrà iniziare nuovamente il processo.
+4. Acknowledge: Il server DHCP selezioo risponde con un messaggio DHCP Acknowledge, confermando l’assegnazione dell’indirizzo IP e di altri parametri di configurazione al client. Se invece avviene un problema, il server invierà un messaggio DHCP Nak (negative acknowledgment), e il client dovrà iniziare nuovamente il processo.
 
 Esempio:
 
@@ -355,14 +364,14 @@ Si immagini di  avere un router domestico con DHCP abilitato e un nuovo smartpho
 
 3. Request: Il tuo smartphone seleziona questa offerta e invia un messaggio di Request indietro al router per accettare l’indirizzo IP di 192.168.1.10.
 
-4. Acknowledge: Il router conferma la selezione inviando al tuo smartphone un messaggio Acknowledge e allo stesso tempo aggiorna la sua tabella di allocazione DHCP per indicare che l’indirizzo 192.168.1.10 è ora assegnato al tuo smartphone per la durata del lease.
+4. Acknowledge: Il router conferma la selezione inviando al tuo smartphone un messaggio Acknowledge e allo stesso tempo aggiorna la sua tabella di allocazione DHCP per indicare che l’indirizzo 192.168.1.10 è ora assego al tuo smartphone per la durata del lease.
 
-Dopo l’acknowledge, il tuo smartphone può comunicare con altri dispositivi nella rete locale e su internet utilizzando l’indirizzo IP assegnato.
+Dopo l’acknowledge, il tuo smartphone può comunicare con altri dispositivi nella rete locale e su internet utilizzando l’indirizzo IP assego.
 
 Il processo è completamente trasparente e si svolge in pochi secondi, il che lo rende uno degli elementi chiave per la semplicità e l’efficienza delle moderne reti di computer.
 
 
-# PROTOCOLLO NAT
+# PROTOCOLLO 
 
 
 Il protocollo NAT (Network Address Translation) è una tecnica utilizzata in reti di computer per trasformare gli indirizzi IP utilizzati all’interno di una rete privata in indirizzi IP utilizzabili su Internet, e viceversa. Tale processo è vitale per consentire ai dispositivi con indirizzi IP privati (che non sono univoci e non possono essere utilizzati su Internet) di comunicare con dispositivi esterni alla loro rete locale.
@@ -393,6 +402,7 @@ In sostanza, NAT consente ai dispositivi all’interno di una rete privata di ut
 
 Questo processo consente di risparmiare indirizzi IP (dato che ce ne sono meno di quanti sarebbero necessari altrimenti) e fornisce un livello di sicurezza aggiunto, nascondendo gli indirizzi IP privati dei dispositivi dall’esterno della rete domestica. Tuttavia, NAT può introdurre complicazioni per alcuni protocolli di rete che richiedono la connettività in entrata o che necessitano di conoscere l’indirizzo IP reale del dispositivo, e per questo possono essere necessarie configurazioni aggiuntive come il port forwarding.
 
+<img width="697" alt="Screenshot 2024-10-21 alle 10 04 13" src="https://github.com/user-attachments/assets/0d063761-d1ae-477d-a4c2-70c0b4a386c9">
 
 # PORTE
 
