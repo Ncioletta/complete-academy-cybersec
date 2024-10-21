@@ -404,15 +404,28 @@ Questo processo consente di risparmiare indirizzi IP (dato che ce ne sono meno d
 
 <img width="697" alt="Screenshot 2024-10-21 alle 10 04 13" src="https://github.com/user-attachments/assets/0d063761-d1ae-477d-a4c2-70c0b4a386c9">
 
+_exploit database_ è unsito x attaccare le vulnerabilità dei dispositivi, scegliendo le piattaforme e il tipo di attacco.
+https://www.exploit-db.com
+
+Attacco DOS: denial of service -> tecnica utilizzata x invadere un servizio, una rete o un sito web non disponibile x utenti legittimi. Obiettivo principale è sovraccaricare la risorse del sistema target attraverso l'invio di un grande volume di richieste. Conseguenze gravi come perdite finanziarie, danni alla reputazione o interruzione di servizi. 
+
+ES:da indirizzo IP 77.00.88.155 partono tantissime richieste/s che arrivano al router; ci si accorge che è un attacco DOS perché quelle richieste arrivano dallo stesso IP; la difesa è individuare quell'IP e bloccare quell'Ip tramite il firewall, che è un componente dei router che stabilisce il blocco di quell'IP -> conseguenza è che le richieste di quell'IP non verranno processate e l'intasamento del router è risolto.
+<img width="349" alt="Screenshot 2024-10-21 alle 10 28 28" src="https://github.com/user-attachments/assets/523b4bad-0ef5-4668-ae3e-6cd6ebf75567">
+
+
 # PORTE
 
 PRINCIPALI PORTE : 
 https://it.wikipedia.org/wiki/Porte_TCP_e_UDP_standard
 
 
+Quando ci colleghiamo a una macchina abbiamo bisogno di 2 cose:
+1. **indirizzo IP**
+2. **numero di porta**
 
 Le porte sono un tipo di sottoindirizzo. L'indirizzo IP è l'indirizzo principale, mentre la porta è il sottoindirizzo. Utilizzando una metafora ben collaudata ma efficace, si pensi all'indirizzo IP come all'indirizzo stradale di un edificio e alla porta come al numero dell'appartamento. L'indirizzo stradale mi serve per arrivare all'edificio corretto, ma l'indirizzo dell'appartamento mi serve per trovare la singola persona. Questo è simile alle porte. L'indirizzo IP ci porta all'host giusto, ma la porta ci porta al servizio appropriato, ad esempio HTTP sulla porta 80.
-Esistono 65.536 porte (2 elevato alla sedicesima potenza). Le prime 1.024 sono generalmente chiamate "porte comuni".
+Esistono 65.536 porte (2 elevato alla sedicesima potenza) -> però il range è 0-65535. Le prime 1.024 sono generalmente chiamate "porte comuni" (_well-known port_).
+
 
 
 Le porte TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) sono assegnazioni numeriche utilizzate nei protocolli di rete per distinguere tra diversi servizi o applicazioni che si eseguono su un singolo dispositivo. Entrambi fanno parte della suite di protocolli internet (TCP/IP) e agiscono come meccanismi di indirizzamento all’interno di una rete, in particolare a livello di trasporto (il quarto livello nel modello OSI o il terzo livello nel modello internet).
@@ -440,6 +453,11 @@ Esempi comuni di porte TCP/UDP:
 
 Le porte vanno da 0 a 65535. Di queste, le porte da 0 a 1023 sono considerate “porte ben note” e sono riservate per servizi ben definiti e ampiamente usati come quelli sopra elencati. Le porte da 1024 a 49151 sono “porte registrate” assegnate per l’uso da protocolli e applicazioni specifici. Infine, le porte da 49152 a 65535 sono “porte dinamiche” o “private”, spesso utilizzate per comunicazioni peer-to-peer o sessioni temporanee
 
+Tool **nmap** x individuare le porte aprte su una macchina.
+varie fun<ionalità; esempi:
+sn: Ping Scan - disable port scan -> per fare un ping scan su un range: individua tutte le porte aperte in un indirizzo IP di un sito web.
+
+
 
 <b>TOOL nmap </b>
  
@@ -449,9 +467,38 @@ Le porte vanno da 0 a 65535. Di queste, le porte da 0 a 1023 sono considerate �
 
  ```
 
+Nmap (Network Mapper) è uno strumento open source ampiamente utilizzato per l'analisi della sicurezza e la scoperta di reti. È particolarmente utile per amministratori di sistema e professionisti della sicurezza informatica per identificare i dispositivi attivi su una rete, i servizi in esecuzione e le vulnerabilità potenziali.
 
+Funzionalità principali di Nmap:
 
+- Scansione della rete: Nmap può scansionare un'intera rete o un singolo host per identificare quali dispositivi sono attivi e raggiungibili.
+- Identificazione del sistema operativo: Può determinare il sistema operativo in esecuzione su un host analizzando le risposte delle porte.
+- Identificazione dei servizi: Oltre a scoprire le porte aperte, Nmap è in grado di identificare quali servizi (come HTTP, FTP, SSH, ecc.) sono in esecuzione su queste porte, e a volte anche la loro versione.
+- Scansioni personalizzate: Gli utenti possono configurare varie opzioni per eseguire scansioni più specifiche, come scansioni stealth (che tentano di nascondere il fatto che sta avvenendo una scansione) o scansioni aggressive (che raccolgono molte informazioni in un'unica scansione).
+- Script Nmap (NSE): Nmap ha un motore di scripting integrato che consente di utilizzare script per automatizzare le scansioni e ottenere informazioni dettagliate su vulnerabilità e configurazioni.
+- Report e output: I risultati delle scansioni possono essere salvati in diversi formati (come XML, grepable, o formato normale) per un'analisi successiva.
 
+Esempi di utilizzo di Nmap:
+*  Scansione di una rete locale: nmap 192.168.1.0/24
+*  Scansione di un singolo host: nmap 192.168.1.1
+*  Identificazione del sistema operativo e dei servizi: nmap -A 192.168.1.1
+*  Scansione delle porte specifiche: nmap -p 22,80,443 192.168.1.1
+
+Avvertenze:
+Legalità: Eseguire scansioni su reti o dispositivi di cui non si possiede autorizzazione è illegale e può avere conseguenze legali. È fondamentale utilizzare Nmap solo su reti e dispositivi di cui si ha il permesso.
+Uso responsabile: Anche quando si utilizza Nmap su reti legittime, è importante approcciare con cautela, poiché scansioni aggressive possono generare un notevole carico sulla rete e potrebbero essere interpretate come attività malevole.
+In sintesi, Nmap è uno strumento potente per la scoperta delle reti e l'analisi della sicurezza, ma deve essere utilizzato con responsabilità e in conformità con le leggi locali.
+
+Altro tool che mi permette di collegarmi direttamente ad una porta specifica di un IP: telnet ip port; es telnet 216.58.204.131 80; dato che quesa è la porta _sicura_, non mi fa entrare; se provo con 443 ok; se provo con la porta 5000 non ci farà entrare perché non è una porta aperta.
+
+https://lite.ip2location.com/norway-ip-address-ranges x IP stati
+https://suip.biz/?act=iploc x ip città
+
+shodan: altro sito utile
+es city="milan" and port=80
+simile: fofa
+
+FTP 
 
 
 # NOTA
