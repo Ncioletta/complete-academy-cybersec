@@ -348,11 +348,21 @@ Quando un dispositivo (client) si connette a una rete, segue un processo DHCP a 
 
 1. Discover: Il client invia un messaggio broadcast (a tutti i dispositivi nella rete) chiamato DHCP Discover per cercare server DHCP disponibili.
 
+<img width="565" alt="Screenshot 2024-10-22 alle 14 31 33" src="https://github.com/user-attachments/assets/40bd0581-e92c-4d82-87bf-af14df080b72">
+
+
 2. Offer: I server DHCP che ricevono il messaggio Discover rispondono con un messaggio DHCP Offer, che include un indirizzo IP che il server è disposto ad assegnare al client, oltre ad altre informazioni di configurazione come il lease time (il tempo per cui l’indirizzo può essere utilizzato), il gateway predefinito, e i server DNS.
 
 3. Request: Il client riceve una o più offerte e sceglie una. Poi invia un messaggio broadcast DHCP Request per informare tutti i server DHCP sulla scelta dell’offerta accettata e per richiedere l’indirizzo IP proposto.
 
 4. Acknowledge: Il server DHCP selezioo risponde con un messaggio DHCP Acknowledge, confermando l’assegnazione dell’indirizzo IP e di altri parametri di configurazione al client. Se invece avviene un problema, il server invierà un messaggio DHCP Nak (negative acknowledgment), e il client dovrà iniziare nuovamente il processo.
+
+<img width="609" alt="Screenshot 2024-10-22 alle 14 37 41" src="https://github.com/user-attachments/assets/b3189037-3227-451a-8c95-71080c303266">
+
+Si possono anche fare configurazioni manuali assegnando l'IP manualmente.
+
+Che senso ha configurarel'IP? Così l'IP rimane fisso e non c'è bisogno ogni volta di cercare le macchine nella LAN -> non spreco le connessioni perché so subito dove mandare le info senza fare i messaggi broadcast: si alleggerisce l'intasamento delle connessioni perché salto tutto il DORA.
+NAS network attached storage.
 
 Esempio:
 
@@ -418,6 +428,16 @@ ES:da indirizzo IP 77.00.88.155 partono tantissime richieste/s che arrivano al r
 PRINCIPALI PORTE : 
 https://it.wikipedia.org/wiki/Porte_TCP_e_UDP_standard
 
+es 
+- 21 FTP -> scambiare file
+- 22 comando ssh -> accesso da remoto
+es di collegamento da remoto dopo che ho individuato che 22 è una porta aperta dell'indirizzo IP 192.168.1.4 
+<img width="421" alt="Screenshot 2024-10-22 alle 12 51 37" src="https://github.com/user-attachments/assets/18790318-b2a5-402c-9e75-63035a4c062a">
+- 3389 RDP -> remote desktop protocol: se tu accedi, vedrai il desktop di quella macchina
+- 25
+- 80
+- 443
+
 
 Quando ci colleghiamo a una macchina abbiamo bisogno di 2 cose:
 1. **indirizzo IP**
@@ -426,6 +446,7 @@ Quando ci colleghiamo a una macchina abbiamo bisogno di 2 cose:
 Le porte sono un tipo di sottoindirizzo. L'indirizzo IP è l'indirizzo principale, mentre la porta è il sottoindirizzo. Utilizzando una metafora ben collaudata ma efficace, si pensi all'indirizzo IP come all'indirizzo stradale di un edificio e alla porta come al numero dell'appartamento. L'indirizzo stradale mi serve per arrivare all'edificio corretto, ma l'indirizzo dell'appartamento mi serve per trovare la singola persona. Questo è simile alle porte. L'indirizzo IP ci porta all'host giusto, ma la porta ci porta al servizio appropriato, ad esempio HTTP sulla porta 80.
 Esistono 65.536 porte (2 elevato alla sedicesima potenza) -> però il range è 0-65535. Le prime 1.024 sono generalmente chiamate "porte comuni" (_well-known port_).
 
+Di default ci sono certe convenzioni, ma non è detto che per forza l'sh vada sulla porta 22 -> lo posso fare perché chi scansiona le porte, cercherà sicuramente la ssh. Quindi conviene muovere certi servizi più critici per renderli pù difficili da trovare nei 65,5k di porte.
 
 
 Le porte TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) sono assegnazioni numeriche utilizzate nei protocolli di rete per distinguere tra diversi servizi o applicazioni che si eseguono su un singolo dispositivo. Entrambi fanno parte della suite di protocolli internet (TCP/IP) e agiscono come meccanismi di indirizzamento all’interno di una rete, in particolare a livello di trasporto (il quarto livello nel modello OSI o il terzo livello nel modello internet).
@@ -1203,6 +1224,8 @@ Many tools are capable of network sniffing, including:
 
 <b>Prerequisiti per lo sniffing</b>
 È fondamentale sottolineare che per utilizzare efficacemente uno sniffer di rete, la scheda di interfaccia di rete (NIC) deve essere in modalità promiscua. Ciò significa che la scheda NIC rileva QUALSIASI pacchetto che attraversa la rete. Di solito, le schede NIC raccolgono solo i pacchetti destinati al loro particolare indirizzo MAC (Globally Unique Physical).
+MAC ADDRESS: cifre identificatie del dispositivo (marca e modello). Comando x trovarlo nel terminale è _sudo nmap -sP -n 192.168.0.0/24_ (sudo ("superuser do") è una forzatura -> consente di agire usando i privilegi di root). If you're using nmap, MAC addresses are only available if you're on the same network segment as the target. Newer versions of nap will only show the MAC address to youff you're running
+63100l.
 L'altro punto critico da comprendere con lo sniffing di rete è che il formato di file standard per lo sniffing è .pcap (packet capture). Ciò significa che il vostro sistema deve avere una libreria (un po' di codice riutilizzabile) per mettere i pacchetti in questo formato. Queste librerie sono libpcap sul sistema Linux o Winpcap sul sistema Windows.
 
 
