@@ -412,6 +412,10 @@ In sostanza, NAT consente ai dispositivi all’interno di una rete privata di ut
 
 Questo processo consente di risparmiare indirizzi IP (dato che ce ne sono meno di quanti sarebbero necessari altrimenti) e fornisce un livello di sicurezza aggiunto, nascondendo gli indirizzi IP privati dei dispositivi dall’esterno della rete domestica. Tuttavia, NAT può introdurre complicazioni per alcuni protocolli di rete che richiedono la connettività in entrata o che necessitano di conoscere l’indirizzo IP reale del dispositivo, e per questo possono essere necessarie configurazioni aggiuntive come il port forwarding.
 
+[port forwardin: comunicazione di un host esterno alla lan e un dispositivo interno alla lan : è un modo di tracciare la strada per l'host esterno di arrivare alla porta dell'IP pubblico della LAN. v. immagine] 
+<img width="790" alt="Screenshot 2024-10-23 alle 11 52 59" src="https://github.com/user-attachments/assets/e17f8084-7cd0-4034-8b95-a2ac627a8c63">
+
+
 <img width="697" alt="Screenshot 2024-10-21 alle 10 04 13" src="https://github.com/user-attachments/assets/0d063761-d1ae-477d-a4c2-70c0b4a386c9">
 
 _exploit database_ è unsito x attaccare le vulnerabilità dei dispositivi, scegliendo le piattaforme e il tipo di attacco.
