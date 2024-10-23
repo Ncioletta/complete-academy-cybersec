@@ -83,7 +83,7 @@ IPv6 è stato introdotto per risolvere il problema dell’esaurimento degli indi
 Il Protocollo IP è essenziale per il funzionamento di Internet e delle reti moderne. Oltre a permettere la comunicazione tra dispositivi distantissimi, agevola l’autoconfigurazione e il dynamic host configuration, elementi basilari per la gestione e la scalabilità di grandi reti. Inoltre, la transizione verso IPv6 gioca un ruolo cruciale per sostenere lo sviluppo futuro dell’Internet of Things (IoT) e per supportare un numero sempre crescente di dispositivi connessi.
 
 ### https://lite.ip2location.com/ip-address-ranges-by-country -> localizzazione geografica di una serie di IP
-Se voglio prendere di mira un paese, un hacker cerca le vulnerabilità dei computer con un IP compreso i quelli del paese.
+Se voglio prendere di mira un paese, un her cerca le vulnerabilità dei computer con un IP compreso i quelli del paese.
 ______________________________________
 
 
@@ -753,12 +753,13 @@ nmap -sF [target]
 
 ### Scansione ACK (Per verificare i filtri)
 
-La scansione ACK può essere utilizzata per determinare se i pacchetti con il flag ACK passano attraverso un firewall e quindi mappare le regole di filtraggio:
+La scansione ACK può essere utilizzata per determinare se i pacchetti con il flag ACK passano attraverso un firewall e quindi mappare le regole di filtraggio: 
 
 
 nmap -sA [target]
 
 
+se mando scansione ack, mi risponde se c'è un firewall perché non riesce a bypassarlo e quindi non si verific ìa l'acknowledgement.
 
 ### Scansione Window
 
