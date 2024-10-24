@@ -1747,6 +1747,11 @@ _____________________________________________________________
 Il Domain Name System o DNS è uno dei protocolli di rete che fanno girare il mondo. Senza di esso, dovremmo ricordare innumerevoli indirizzi IP solo per navigare verso i nostri siti web preferiti. Immaginate di dover ricordare gli indirizzi IPv4 (32 bit) di Facebook, Amazon e Hackers-Arise, solo per visitare ciascuno di questi siti web di importanza critica (il che è peggiorato dagli indirizzi IPv6 a 128 bit).
 Il DNS è stato progettato per tradurre un nome di dominio - qualcosa che le persone sono piuttosto brave a ricordare - in un indirizzo IP, il linguaggio del routing di Internet. Il DNS è semplicemente la traduzione di un nome di dominio nei rispettivi indirizzi IP.
 
+X navigare senza essere tracciati con il mio router, la navigazione in ingognito non serve a nulla perche sono tracciato con DNS -> conviene cambiare dns nelle impostazioni del router in manuale e usarne uno che posso trovare su Opendns; ma se voglio privacy faccio turnover di questi DNS così non lascio troppi dati in giro sulla stessa fonte. Il miglior paese x privacy e legislazione. Il paese migliore x VPN e queste cose è l'Olanda (evitare provider più grandi x IP dns).
+I DNS impostati devono essere sempre 2 perché se uno salta, interviene il secondo.
+
+Se io incollo un IP su internet e lo cerco, il mio router non ha bisogno del lavoro del DNS perché il dns serve a rinominare IP e noi gliel'abbiamo già fornito.
+
 
 
 
